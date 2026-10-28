@@ -1,0 +1,10 @@
+bin/
+obj/
+.vs/
+*.user
+node_modules/
+frontend/node_modules/
+*.db
+*.db-shm
+*.db-wal
+App_Data/

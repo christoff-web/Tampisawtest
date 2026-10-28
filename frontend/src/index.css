@@ -1,0 +1,349 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&family=Public+Sans:wght@400;500;600;700;800&display=swap");
+@import "tailwindcss";
+
+@theme static {
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.25rem;
+  --font-sans: "Public Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "DM Mono", ui-monospace, monospace;
+
+  --color-navy: #0a1f44;
+  --color-blue: #1e5bd8;
+  --color-coral: #d9480f;
+
+  --color-aqua-50: color-mix(in oklab, var(--color-blue) 8%, white);
+  --color-aqua-100: color-mix(in oklab, var(--color-blue) 16%, white);
+  --color-aqua-200: color-mix(in oklab, var(--color-blue) 30%, white);
+  --color-aqua-300: color-mix(in oklab, var(--color-blue) 50%, white);
+  --color-aqua-400: color-mix(in oklab, var(--color-blue) 70%, white);
+  --color-aqua-500: color-mix(in oklab, var(--color-blue) 85%, white);
+  --color-aqua-600: var(--color-blue);
+  --color-aqua-700: color-mix(in oklab, var(--color-blue) 12%, black);
+  --color-aqua-800: color-mix(in oklab, var(--color-blue) 26%, black);
+  --color-aqua-900: color-mix(in oklab, var(--color-blue) 40%, black);
+  --color-aqua-950: color-mix(in oklab, var(--color-blue) 54%, black);
+  --color-sky-50: color-mix(in oklab, var(--color-blue) 8%, white);
+  --color-sky-100: color-mix(in oklab, var(--color-blue) 16%, white);
+  --color-sky-200: color-mix(in oklab, var(--color-blue) 30%, white);
+  --color-sky-300: color-mix(in oklab, var(--color-blue) 50%, white);
+  --color-sky-400: color-mix(in oklab, var(--color-blue) 70%, white);
+  --color-sky-500: color-mix(in oklab, var(--color-blue) 85%, white);
+  --color-sky-600: var(--color-blue);
+  --color-sky-700: color-mix(in oklab, var(--color-blue) 12%, black);
+  --color-sky-800: color-mix(in oklab, var(--color-blue) 26%, black);
+  --color-sky-900: color-mix(in oklab, var(--color-blue) 40%, black);
+  --color-sky-950: color-mix(in oklab, var(--color-blue) 54%, black);
+  --color-emerald-50: color-mix(in oklab, var(--color-blue) 8%, white);
+  --color-emerald-100: color-mix(in oklab, var(--color-blue) 16%, white);
+  --color-emerald-200: color-mix(in oklab, var(--color-blue) 30%, white);
+  --color-emerald-300: color-mix(in oklab, var(--color-blue) 50%, white);
+  --color-emerald-400: color-mix(in oklab, var(--color-blue) 70%, white);
+  --color-emerald-500: color-mix(in oklab, var(--color-blue) 85%, white);
+  --color-emerald-600: var(--color-blue);
+  --color-emerald-700: color-mix(in oklab, var(--color-blue) 12%, black);
+  --color-emerald-800: color-mix(in oklab, var(--color-blue) 26%, black);
+  --color-emerald-900: color-mix(in oklab, var(--color-blue) 40%, black);
+  --color-emerald-950: color-mix(in oklab, var(--color-blue) 54%, black);
+  --color-red-50: color-mix(in oklab, var(--color-coral) 8%, white);
+  --color-red-100: color-mix(in oklab, var(--color-coral) 16%, white);
+  --color-red-200: color-mix(in oklab, var(--color-coral) 30%, white);
+  --color-red-300: color-mix(in oklab, var(--color-coral) 50%, white);
+  --color-red-400: color-mix(in oklab, var(--color-coral) 70%, white);
+  --color-red-500: color-mix(in oklab, var(--color-coral) 85%, white);
+  --color-red-600: var(--color-coral);
+  --color-red-700: color-mix(in oklab, var(--color-coral) 12%, black);
+  --color-red-800: color-mix(in oklab, var(--color-coral) 26%, black);
+  --color-red-900: color-mix(in oklab, var(--color-coral) 40%, black);
+  --color-red-950: color-mix(in oklab, var(--color-coral) 54%, black);
+  --color-amber-50: color-mix(in oklab, var(--color-coral) 8%, white);
+  --color-amber-100: color-mix(in oklab, var(--color-coral) 16%, white);
+  --color-amber-200: color-mix(in oklab, var(--color-coral) 30%, white);
+  --color-amber-300: color-mix(in oklab, var(--color-coral) 50%, white);
+  --color-amber-400: color-mix(in oklab, var(--color-coral) 70%, white);
+  --color-amber-500: color-mix(in oklab, var(--color-coral) 85%, white);
+  --color-amber-600: var(--color-coral);
+  --color-amber-700: color-mix(in oklab, var(--color-coral) 12%, black);
+  --color-amber-800: color-mix(in oklab, var(--color-coral) 26%, black);
+  --color-amber-900: color-mix(in oklab, var(--color-coral) 40%, black);
+  --color-amber-950: color-mix(in oklab, var(--color-coral) 54%, black);
+  /* Semantic status tokens: success=green, warning=amber, danger=red. Use these for status meaning only. */
+  --color-success-50: #f0fdf4;
+  --color-success-100: #dcfce7;
+  --color-success-200: #bbf7d0;
+  --color-success-300: #86efac;
+  --color-success-400: #4ade80;
+  --color-success-500: #22c55e;
+  --color-success-600: #16a34a;
+  --color-success-700: #15803d;
+  --color-success-800: #166534;
+  --color-success-900: #14532d;
+  --color-warning-50: #fffbeb;
+  --color-warning-100: #fef3c7;
+  --color-warning-200: #fde68a;
+  --color-warning-300: #fcd34d;
+  --color-warning-400: #fbbf24;
+  --color-warning-500: #f59e0b;
+  --color-warning-600: #d97706;
+  --color-warning-700: #b45309;
+  --color-warning-800: #92400e;
+  --color-warning-900: #78350f;
+  --color-danger-50: #fef2f2;
+  --color-danger-100: #fee2e2;
+  --color-danger-200: #fecaca;
+  --color-danger-300: #fca5a5;
+  --color-danger-400: #f87171;
+  --color-danger-500: #ef4444;
+  --color-danger-600: #dc2626;
+  --color-danger-700: #b91c1c;
+  --color-danger-800: #991b1b;
+  --color-danger-900: #7f1d1d;
+
+  /* Brand aliases: aqua-*, sky-* and emerald-* are all remapped to the brand blue above (legacy names, not renamed).
+     Never use emerald/amber/red for status; use success/warning/danger. brand-* is the preferred name for new code. */
+  --color-brand-50: var(--color-aqua-50);
+  --color-brand-100: var(--color-aqua-100);
+  --color-brand-200: var(--color-aqua-200);
+  --color-brand-300: var(--color-aqua-300);
+  --color-brand-400: var(--color-aqua-400);
+  --color-brand-500: var(--color-aqua-500);
+  --color-brand-600: var(--color-aqua-600);
+  --color-brand-700: var(--color-aqua-700);
+  --color-brand-800: var(--color-aqua-800);
+  --color-brand-900: var(--color-aqua-900);
+  --color-slate-50: color-mix(in oklab, var(--color-navy) 4%, white);
+  --color-slate-100: color-mix(in oklab, var(--color-navy) 8%, white);
+  --color-slate-200: color-mix(in oklab, var(--color-navy) 15%, white);
+  --color-slate-300: color-mix(in oklab, var(--color-navy) 28%, white);
+  --color-slate-400: color-mix(in oklab, var(--color-navy) 45%, white);
+  --color-slate-500: color-mix(in oklab, var(--color-navy) 66%, white);
+  --color-slate-600: color-mix(in oklab, var(--color-navy) 78%, white);
+  --color-slate-700: color-mix(in oklab, var(--color-navy) 84%, white);
+  --color-slate-800: color-mix(in oklab, var(--color-navy) 92%, white);
+  --color-slate-900: color-mix(in oklab, var(--color-navy) 96%, white);
+  --color-slate-950: var(--color-navy);
+  --color-ink-50: color-mix(in oklab, var(--color-navy) 4%, white);
+  --color-ink-100: color-mix(in oklab, var(--color-navy) 8%, white);
+  --color-ink-200: color-mix(in oklab, var(--color-navy) 15%, white);
+  --color-ink-300: color-mix(in oklab, var(--color-navy) 28%, white);
+  --color-ink-400: color-mix(in oklab, var(--color-navy) 45%, white);
+  --color-ink-500: color-mix(in oklab, var(--color-navy) 66%, white);
+  --color-ink-600: color-mix(in oklab, var(--color-navy) 78%, white);
+  --color-ink-700: color-mix(in oklab, var(--color-navy) 84%, white);
+  --color-ink-800: color-mix(in oklab, var(--color-navy) 92%, white);
+  --color-ink-900: color-mix(in oklab, var(--color-navy) 96%, white);
+  --color-ink-950: var(--color-navy);
+  --color-sand-50: color-mix(in oklab, var(--color-navy) 2%, white);
+  --color-sand-100: color-mix(in oklab, var(--color-navy) 5%, white);
+  --color-sand-200: color-mix(in oklab, var(--color-navy) 10%, white);
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    overflow-x: clip;
+    background: var(--color-sand-50);
+    color: var(--color-ink-900);
+    font-family: var(--font-sans);
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+  }
+
+  button,
+  input,
+  select {
+    font: inherit;
+  }
+
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  img,
+  svg,
+  video {
+    max-width: 100%;
+  }
+
+  button:not(:disabled),
+  a {
+    cursor: pointer;
+  }
+
+  /* A <button> nested in a link must not swallow the click (Firefox/Safari). */
+  a > button:not(:disabled) {
+    pointer-events: none;
+  }
+  a:hover > button:not(:disabled) {
+    filter: brightness(0.96);
+  }
+
+  ::selection {
+    background: var(--color-aqua-200);
+    color: var(--color-ink-950);
+  }
+}
+
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes pop-in {
+  from { opacity: 0; transform: translateY(18px) scale(0.97); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* Motion speed: guest/public 0.5s, staff/admin 0.2s (set via .workspace-staff). */
+:root { --motion-slow: 0.5s; }
+.workspace-staff { --motion-slow: 0.2s; }
+
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(24px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes slide-out-right {
+  from { opacity: 1; transform: none; }
+  to { opacity: 0; transform: translateX(24px); }
+}
+@keyframes panel-out {
+  from { opacity: 1; transform: none; }
+  to { opacity: 0; transform: translateY(12px) scale(0.98); }
+}
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+@keyframes flash-green { from { background-color: rgb(187 247 208 / 0.8); } to { background-color: transparent; } }
+@keyframes flash-red { from { background-color: rgb(254 202 202 / 0.8); } to { background-color: transparent; } }
+@keyframes flash-amber { from { background-color: rgb(254 243 199 / 0.85); } to { background-color: transparent; } }
+@keyframes scan-line {
+  0% { top: 8%; }
+  50% { top: 90%; }
+  100% { top: 8%; }
+}
+@keyframes check-draw { to { stroke-dashoffset: 0; } }
+@keyframes badge-pulse {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.35); }
+  100% { transform: scale(1); }
+}
+@keyframes select-pop {
+  0% { transform: scale(0.94); box-shadow: 0 0 0 0 rgb(30 91 216 / 0.45); }
+  60% { transform: scale(1.03); }
+  100% { transform: scale(1); box-shadow: 0 0 0 6px rgb(30 91 216 / 0); }
+}
+
+.animate-rise { animation: rise-in var(--motion-slow) cubic-bezier(0.22, 1, 0.36, 1) both; }
+.animate-pop { animation: pop-in 0.3s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.animate-fade { animation: fade-in 0.25s ease-out both; }
+.animate-float { animation: float-soft 5s ease-in-out infinite; }
+.animate-slide-in { animation: slide-in-right 0.25s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.animate-slide-out { animation: slide-out-right 0.15s ease-in both; }
+.animate-badge-pulse { animation: badge-pulse 0.45s ease-out 1; }
+.animate-select-pop { animation: select-pop 0.35s cubic-bezier(0.22, 1, 0.36, 1) 1; }
+.modal-panel { animation: pop-in 0.3s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.modal-panel-out { animation: panel-out 0.15s ease-in both; }
+.modal-backdrop-out { animation: fade-out 0.15s ease-in both; }
+.scan-flash-green { animation: flash-green 0.25s ease-out both; }
+.scan-flash-red { animation: flash-red 0.25s ease-out both; }
+.scan-flash-amber { animation: flash-amber 0.25s ease-out both; }
+.scan-line {
+  position: absolute; left: 6%; right: 6%; height: 2px; pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgb(74 222 128), transparent);
+  box-shadow: 0 0 10px rgb(74 222 128 / 0.8);
+  animation: scan-line 2.2s ease-in-out infinite;
+}
+.check-draw path { stroke-dasharray: 48; stroke-dashoffset: 48; animation: check-draw 0.45s ease-out 0.1s forwards; }
+.check-draw circle { stroke-dasharray: 160; stroke-dashoffset: 160; animation: check-draw 0.5s ease-out forwards; }
+
+/* Collapsible region: wrap content in a single child with overflow-hidden/min-h-0. */
+.collapse-grid {
+  display: grid; grid-template-rows: 0fr; opacity: 0;
+  transition: grid-template-rows var(--motion-slow) ease, opacity var(--motion-slow) ease;
+}
+.collapse-grid[data-open="true"] { grid-template-rows: 1fr; opacity: 1; }
+.collapse-grid > * { min-height: 0; overflow: hidden; }
+
+.stagger > * { animation: rise-in var(--motion-slow) cubic-bezier(0.22, 1, 0.36, 1) both; }
+.stagger > *:nth-child(1) { animation-delay: 0ms; }
+.stagger > *:nth-child(2) { animation-delay: 70ms; }
+.stagger > *:nth-child(3) { animation-delay: 140ms; }
+.stagger > *:nth-child(4) { animation-delay: 210ms; }
+.stagger > *:nth-child(5) { animation-delay: 280ms; }
+.stagger > *:nth-child(6) { animation-delay: 350ms; }
+.stagger > *:nth-child(n + 7) { animation-delay: 420ms; }
+.workspace-staff .stagger > *:nth-child(n) { animation-delay: 0ms; }
+
+/* No hover lift on staff/admin screens. */
+.workspace-staff [class*="hover:-translate-y"]:hover { translate: none !important; transform: none !important; }
+
+.workspace-protected {
+  -webkit-user-select: none;
+  user-select: none;
+}
+.workspace-protected input,
+.workspace-protected textarea,
+.workspace-protected select,
+.workspace-protected [contenteditable="true"] {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+@media print {
+  header,
+  footer,
+  button {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+  }
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #ticket-print,
+  #ticket-print * {
+    visibility: visible;
+  }
+  #ticket-print {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  .no-print {
+    display: none !important;
+  }
+}

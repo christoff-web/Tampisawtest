@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.VisualStudio.JavaScript.Sdk/1.0.790219">
+  <PropertyGroup>
+	<StartupCommand>npm run dev</StartupCommand>
+	<JavaScriptTestFramework>None</JavaScriptTestFramework>
+	<TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+	<ShouldRunVite>true</ShouldRunVite>
+	<AutoRunVite>false</AutoRunVite>
+  </PropertyGroup>
+</Project>

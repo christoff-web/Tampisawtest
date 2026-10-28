@@ -1,0 +1,1 @@
+function e(e){let t=e.replace(/\D/g,``);return t.startsWith(`63`)&&t.length>=11&&(t=`0${t.slice(2)}`),t}function t(t,n){let r=t.trim().toLowerCase();if(!r||[n.name,n.email,n.id,...n.extra??[]].filter(Boolean).some(e=>e.toLowerCase().includes(r)))return!0;let i=e(r);return i.length>=3&&n.phone?e(n.phone).includes(i):!1}var n=`Search name, email or mobile`;export{t as n,n as t};

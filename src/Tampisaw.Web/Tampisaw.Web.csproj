@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Tampisaw</RootNamespace>
+    <AssemblyName>Tampisaw.Web</AssemblyName>
+    <NoWarn>$(NoWarn);NETSDK1188</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Tampisaw.Tests" />
+  </ItemGroup>
+
+  <!-- Normal build: Microsoft SQL Server through Entity Framework Core. -->
+  <ItemGroup Condition="'$(NoDb)' != 'true'">
+    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="10.0.13" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.13">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.13" />
+  </ItemGroup>
+
+  <!-- Developer-only switch used to compile and smoke-test the API without NuGet access (see docs). -->
+  <PropertyGroup Condition="'$(NoDb)' == 'true'">
+    <DefineConstants>$(DefineConstants);NODB</DefineConstants>
+    <RequiresAspNetWebAssets>false</RequiresAspNetWebAssets>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(NoDb)' == 'true'">
+    <Compile Remove="Data/Migrations/**;Data/TampisawDbContext.cs;Data/TampisawDbContextFactory.cs;Data/DbStatePersistence.cs;Data/DatabaseOptions.cs" />
+  </ItemGroup>
+
+</Project>
